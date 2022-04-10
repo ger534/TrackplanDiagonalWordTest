@@ -13,17 +13,16 @@ namespace TrackplanDiagonalWordTest.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult WordTable()
         {
-            ViewBag.Message = "Your application description page.";
+            var uri = new Uri(Request.Url.ToString());
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+            try {
+                ViewBag.word = uri.Segments[2];
+            } catch (Exception) {
+                ViewBag.word = "";
+            }
+            
             return View();
         }
     }

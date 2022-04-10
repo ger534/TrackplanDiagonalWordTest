@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "WordTable";
+}
+<br />
+<table id="wordTable" style="display:flex;justify-content:center"></table>
+
+<input id="word"
+       name="word"
+       type="hidden"
+       value="@ViewBag.word" />
+
+<br/>
+<button onclick="Back()" style="display:flex">Back</button>
+
+<script>
+
+    document.getElementById('wordTable').innerHTML = document.getElementById("word").value.split("").map((letter, i) =>
+        `<tr>
+                ${Array(i).fill(i).map(() => `<td></td>`).join('')}
+                <td>${letter}</td>
+            </tr>`
+    ).join('')
+
+    function Back() {
+        location.href = `/`;
+    }
+
+</script>
