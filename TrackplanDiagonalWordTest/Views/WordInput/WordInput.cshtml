@@ -1,0 +1,10 @@
+﻿@model TrackplanDiagonalWordTest.Models.WordModel
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+@using (Html.BeginForm("WordTable", "WordTable", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.Word)
+    <input value="Go" type="submit" />
+}

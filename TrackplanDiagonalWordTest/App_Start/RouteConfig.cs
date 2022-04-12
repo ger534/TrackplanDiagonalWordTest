@@ -15,8 +15,14 @@ namespace TrackplanDiagonalWordTest
 
             routes.MapRoute(
                 name: "Default",
-                url: "{action}/{word}",
-                defaults: new { controller = "Home", action = "Index", word = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "WordInput", action = "WordInput" }
+            );
+
+            routes.MapRoute(
+                name: "WordTable",
+                url: "{controller}/{action}",
+                defaults: new { controller = "WordTable", action = "WordTable" }
             );
         }
     }
